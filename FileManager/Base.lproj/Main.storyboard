@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lnV-j8-zSs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ut-X5-RjU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -8,6 +8,63 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tyq-GR-DAz">
+            <objects>
+                <viewController id="2ut-X5-RjU" customClass="LoginViewController" customModule="FileManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mcJ-KY-6tz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="9Wn-ei-B58">
+                                <rect key="frame" x="20" y="361" width="374" height="174"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ic-e4-Xkm">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="9hX-4D-Biu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpc-YH-LK7">
+                                        <rect key="frame" x="0.0" y="114" width="374" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="z4L-Js-A8x"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="кнопка">
+                                            <backgroundConfiguration key="background" cornerRadius="14">
+                                                <color key="backgroundColor" red="0.20392156859999999" green="0.35686274509999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="2ut-X5-RjU" eventType="touchUpInside" id="nti-j3-gfY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ebr-NV-UW1"/>
+                        <color key="backgroundColor" red="0.83137254900000002" green="0.92549019610000005" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="9Wn-ei-B58" firstAttribute="centerX" secondItem="mcJ-KY-6tz" secondAttribute="centerX" id="3Dl-Tl-oEp"/>
+                            <constraint firstItem="ebr-NV-UW1" firstAttribute="trailing" secondItem="9Wn-ei-B58" secondAttribute="trailing" constant="20" id="Uds-Zn-qGM"/>
+                            <constraint firstItem="9Wn-ei-B58" firstAttribute="leading" secondItem="ebr-NV-UW1" secondAttribute="leading" constant="20" id="uaC-vL-MsQ"/>
+                            <constraint firstItem="9Wn-ei-B58" firstAttribute="centerY" secondItem="mcJ-KY-6tz" secondAttribute="centerY" id="zIM-J7-xOC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="Bpc-YH-LK7" id="G2C-wN-wJO"/>
+                        <outlet property="passwordTF" destination="4Ic-e4-Xkm" id="dWF-lF-ctH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Hf-0z-0zS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415.94202898550731" y="81.696428571428569"/>
+        </scene>
         <!--FileManager-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -57,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="82.366071428571431"/>
+            <point key="canvasLocation" x="1278" y="82"/>
         </scene>
         <!--Folder View Controller-->
         <scene sceneID="3Yt-ab-pWD">
@@ -114,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIc-ct-bIt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="82"/>
+            <point key="canvasLocation" x="2125" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zoU-0v-jRl">
@@ -136,7 +193,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vk4-BC-R0P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="82.366071428571431"/>
+            <point key="canvasLocation" x="-416" y="82"/>
         </scene>
     </scenes>
     <resources>

@@ -13,6 +13,7 @@
 		A561AC1627A3E8C20072B250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A561AC1427A3E8C20072B250 /* Main.storyboard */; };
 		A561AC1827A3E8C30072B250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A561AC1727A3E8C30072B250 /* Assets.xcassets */; };
 		A561AC1B27A3E8C30072B250 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A561AC1927A3E8C30072B250 /* LaunchScreen.storyboard */; };
+		A572881327AA86D100F449FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572881227AA86D100F449FE /* LoginViewController.swift */; };
 		A58B04BD27A6E20F009239A6 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B04BC27A6E20F009239A6 /* FolderViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		A561AC1727A3E8C30072B250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A561AC1A27A3E8C30072B250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A561AC1C27A3E8C30072B250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A572881227AA86D100F449FE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A58B04BC27A6E20F009239A6 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,7 @@
 			children = (
 				A561AC0E27A3E8C20072B250 /* AppDelegate.swift */,
 				A561AC1027A3E8C20072B250 /* SceneDelegate.swift */,
+				A572881227AA86D100F449FE /* LoginViewController.swift */,
 				A561AC1227A3E8C20072B250 /* ViewController.swift */,
 				A58B04BC27A6E20F009239A6 /* FolderViewController.swift */,
 				A561AC1427A3E8C20072B250 /* Main.storyboard */,
@@ -144,6 +147,7 @@
 				A58B04BD27A6E20F009239A6 /* FolderViewController.swift in Sources */,
 				A561AC1327A3E8C20072B250 /* ViewController.swift in Sources */,
 				A561AC0F27A3E8C20072B250 /* AppDelegate.swift in Sources */,
+				A572881327AA86D100F449FE /* LoginViewController.swift in Sources */,
 				A561AC1127A3E8C20072B250 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

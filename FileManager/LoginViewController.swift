@@ -20,7 +20,6 @@ class LoginViewController: UIViewController {
         if sender.titleLabel?.text == "Создать пароль" {
             if checkPass(pass: passwordTF.text) == true {
                 createPassword(password: passwordTF.text!)
-                
             } else {
                 let alert = UIAlertController(title: "Ошибка", message: "Пароль должен состоять минимум из 4 символов.", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Ok", style: .cancel) { _ in
@@ -53,6 +52,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
+
     
     @IBAction func loginAction(_ sender: UIButton) {
         if sender.titleLabel?.text == "Введите пароль" {

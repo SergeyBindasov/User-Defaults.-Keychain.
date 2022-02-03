@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FileManagerViewController: UIViewController {
     
     let fileManager = FileManager.default
     
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
+       
         fileTableview.delegate = self
         fileTableview.dataSource = self
         loadContent()
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
 }
 
 // MARK:  Class Methods
-extension ViewController {
+extension FileManagerViewController {
     func createUrl() -> URL {
         let documentsURL = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         return documentsURL
@@ -73,14 +73,14 @@ extension ViewController {
 }
 
 // MARK:  TableView Methods
-extension ViewController: UITableViewDelegate {
+extension FileManagerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         folder = indexPath.row
         performSegue(withIdentifier: "folder", sender: self)
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension FileManagerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         content.count
     }

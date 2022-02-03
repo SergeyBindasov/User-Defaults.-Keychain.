@@ -14,6 +14,18 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     
     @IBAction func buttonPressed(_ sender: UIButton) {
+        if checkPass(pass: passwordTF.text) == true {
+            button.setTitle("Повторите пароль", for: .normal)
+            passwordTF.text = ""
+        } else {
+            let alert = UIAlertController(title: "Ошибка", message: "Пароль должен состоять минимум из 4 символов.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .cancel) { _ in
+                self.passwordTF.text = ""
+                self.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     func conditionCheck() {
@@ -24,9 +36,17 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func checkPass(pass: String?) -> Bool {
+    let validPassword = NSPredicate(format: "SELF MATCHES %@ ", ".{4,}$")
+    return validPassword.evaluate(with: pass)
+}
+    
     override func viewDidLoad() {
          super.viewDidLoad()
         conditionCheck()
+        
+    
     }
     
 }
+

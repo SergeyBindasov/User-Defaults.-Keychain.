@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="9Wn-ei-B58">
-                                <rect key="frame" x="20" y="361" width="374" height="174"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9Wn-ei-B58">
+                                <rect key="frame" x="20" y="343.5" width="374" height="209"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ic-e4-Xkm">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="9hX-4D-Biu"/>
@@ -28,20 +28,30 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Повторите пароль" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHA-an-KZe">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="39"/>
+                                        <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="J8x-Dj-82T"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpc-YH-LK7">
-                                        <rect key="frame" x="0.0" y="114" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="149" width="374" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="z4L-Js-A8x"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Создать пароль">
+                                        <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background" cornerRadius="14">
                                                 <color key="backgroundColor" red="0.20392156859999999" green="0.35686274509999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="buttonPressed:" destination="2ut-X5-RjU" eventType="touchUpInside" id="nti-j3-gfY"/>
+                                            <action selector="checkPassword:" destination="2ut-X5-RjU" eventType="touchUpInside" id="iNg-N2-YPW"/>
+                                            <action selector="loginAction:" destination="2ut-X5-RjU" eventType="touchUpInside" id="1au-3d-eM3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -59,6 +69,7 @@
                     <navigationItem key="navigationItem" id="1QH-25-bZy"/>
                     <connections>
                         <outlet property="button" destination="Bpc-YH-LK7" id="G2C-wN-wJO"/>
+                        <outlet property="confirmTF" destination="hHA-an-KZe" id="Ou0-nD-Civ"/>
                         <outlet property="passwordTF" destination="4Ic-e4-Xkm" id="dWF-lF-ctH"/>
                         <segue destination="BYZ-38-t0r" kind="push" identifier="button" id="m0j-ws-QPN"/>
                     </connections>

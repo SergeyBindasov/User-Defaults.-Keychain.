@@ -6,5 +6,5 @@ target 'FileManager' do
   use_frameworks!
 
   # Pods for FileManager
-pod 'KeychainSwift', '~> 20.0'
+pod 'KeychainAccess', '~> 4.2'
 end

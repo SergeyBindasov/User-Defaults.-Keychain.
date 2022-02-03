@@ -1,16 +1,16 @@
 PODS:
-  - KeychainSwift (20.0.0)
+  - KeychainAccess (4.2.2)
 
 DEPENDENCIES:
-  - KeychainSwift (~> 20.0)
+  - KeychainAccess (~> 4.2)
 
 SPEC REPOS:
   trunk:
-    - KeychainSwift
+    - KeychainAccess
 
 SPEC CHECKSUMS:
-  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
 
-PODFILE CHECKSUM: 3c04c24cffe1677a8dc550c64e53fec7810e620e
+PODFILE CHECKSUM: a04b42770d888eaa97ddc4346e37a1b7df54029e
 
 COCOAPODS: 1.11.2

@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         fileTableview.delegate = self
         fileTableview.dataSource = self
         loadContent()

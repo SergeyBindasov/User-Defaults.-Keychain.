@@ -249,7 +249,11 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5fl-4k-77y">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="IeX-rR-Bqi" kind="relationship" relationship="viewControllers" id="F5a-OQ-6cr"/>
@@ -279,6 +283,7 @@
             <point key="canvasLocation" x="6418.840579710145" y="-749.33035714285711"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>

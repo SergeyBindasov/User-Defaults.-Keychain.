@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="2ut-X5-RjU" customClass="LoginViewController" customModule="FileManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mcJ-KY-6tz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9Wn-ei-B58">
-                                <rect key="frame" x="20" y="343.5" width="374" height="209"/>
+                                <rect key="frame" x="20" y="316.5" width="374" height="209"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ic-e4-Xkm">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -52,6 +52,7 @@
                                             <action selector="buttonPressed:" destination="2ut-X5-RjU" eventType="touchUpInside" id="nti-j3-gfY"/>
                                             <action selector="checkPassword:" destination="2ut-X5-RjU" eventType="touchUpInside" id="iNg-N2-YPW"/>
                                             <action selector="loginAction:" destination="2ut-X5-RjU" eventType="touchUpInside" id="1au-3d-eM3"/>
+                                            <action selector="newPassWord:" destination="2ut-X5-RjU" eventType="touchUpInside" id="apR-pf-3pL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -83,11 +84,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="FileManagerViewController" customModule="FileManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5yg-R1-zpn">
-                                <rect key="frame" x="20" y="115" width="374" height="698"/>
+                                <rect key="frame" x="20" y="83" width="374" height="730"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.92549019610000005" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="gPb-zF-cuc">
@@ -128,32 +129,59 @@
             </objects>
             <point key="canvasLocation" x="10342.028985507248" y="-749.33035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="4Jd-Im-CAW">
             <objects>
-                <viewController id="Q8T-xn-xYh" sceneMemberID="viewController">
+                <viewController id="Q8T-xn-xYh" customClass="SettingsViewController" customModule="FileManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cAw-Qw-l42">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwp-Ul-DKJ">
+                                <rect key="frame" x="24" y="650" width="366" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="GFj-Vo-pKw"/>
+                                </constraints>
+                                <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Изменить пароль">
+                                    <backgroundConfiguration key="background" cornerRadius="14">
+                                        <color key="backgroundColor" red="0.20392156859999999" green="0.35686274509999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="resetpressed:" destination="Q8T-xn-xYh" eventType="touchUpInside" id="LdD-01-eyQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BJR-N2-amH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mwp-Ul-DKJ" secondAttribute="trailing" constant="24" id="1Jk-a6-wON"/>
+                            <constraint firstAttribute="bottom" secondItem="Mwp-Ul-DKJ" secondAttribute="bottom" constant="130" id="gVS-1A-4t6"/>
+                            <constraint firstItem="Mwp-Ul-DKJ" firstAttribute="leading" secondItem="cAw-Qw-l42" secondAttribute="leading" constant="24" id="ubV-IP-X8X"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sid-tF-i0p"/>
+                    <connections>
+                        <outlet property="resetButton" destination="Mwp-Ul-DKJ" id="e7e-nN-fxb"/>
+                        <segue destination="2ut-X5-RjU" kind="presentation" identifier="reset" id="mtL-aY-s3n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4b-q9-6Oc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8522" y="48"/>
+            <point key="canvasLocation" x="8521.7391304347839" y="73.660714285714278"/>
         </scene>
         <!--Folder View Controller-->
         <scene sceneID="3Yt-ab-pWD">
             <objects>
                 <viewController id="kew-Jc-mkL" customClass="FolderViewController" customModule="FileManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tOB-ET-FYG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FJa-5a-150">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="757"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -199,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIc-ct-bIt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11539.13043478261" y="-727.23214285714278"/>
+            <point key="canvasLocation" x="11226" y="-749"/>
         </scene>
         <!--FileManager-->
         <scene sceneID="lbg-R4-KaN">
@@ -208,7 +236,7 @@
                     <tabBarItem key="tabBarItem" title="FileManager" image="folder.fill" catalog="system" id="y5p-S4-IxW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bvq-SQ-AuH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -227,7 +255,7 @@
                     <tabBarItem key="tabBarItem" title="Настройки" image="gear.circle" catalog="system" id="FgH-8r-YHT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qed-hm-6Uz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -283,6 +311,10 @@
             <point key="canvasLocation" x="6418.840579710145" y="-749.33035714285711"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ATC-ep-eKq"/>
+        <segue reference="mtL-aY-s3n"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>

@@ -10,6 +10,8 @@ import KeychainAccess
 
 class LoginViewController: UIViewController {
     
+    var label: String?
+    
     let keyChain = Keychain(service: "com.sergeybindasov.FileManager")
     
     @IBOutlet weak var passwordTF: UITextField!
@@ -32,11 +34,27 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func newPassWord(_ sender: UIButton) {
+        if sender.titleLabel?.text == "Изменить пароль" {
+            if checkPass(pass: passwordTF.text) == true {
+                guard let password = passwordTF.text else { return }
+                keyChain["password"] = password
+                dismiss(animated: true)
+            } else {
+                let alert = UIAlertController(title: "Ошибка", message: "Пароль должен состоять минимум из 4 символов.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .cancel) { _ in
+                    self.passwordTF.text = ""
+                }
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
+            }
+        }
+    }
     @IBAction func checkPassword(_ sender: UIButton) {
         if sender.titleLabel?.text == "Повторите пароль" {
             guard let userPassword = confirmTF.text else { return }
             if userPassword == keyChain["password"]! {
-            performSegue(withIdentifier: "button", sender: self)
+                    performSegue(withIdentifier: "button", sender: self)
             } else {
                 let alert = UIAlertController(title: "Ошибка", message: "Пароли не совпадают. Повоторите все заново.", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Ok", style: .cancel) { _ in
@@ -91,11 +109,21 @@ class LoginViewController: UIViewController {
         return validPassword.evaluate(with: pass)
     }
     
+    func resetPassword() {
+      keyChain["password"] = nil
+      label = "Изменить пароль"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTF.isSecureTextEntry = true
         button.titleLabel?.tintColor = .white
         confirmTF.isHidden = true
         conditionCheck()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        button.setTitle(label, for: .normal)
     }
 }

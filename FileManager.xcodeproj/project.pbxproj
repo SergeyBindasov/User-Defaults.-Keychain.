@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0759FB18C141B09E3ED1DABC /* Pods_FileManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A7C4F32E8AA3D09CE9D0AB /* Pods_FileManager.framework */; };
+		A556018827AD562B00B1F27E /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A556018627AD562B00B1F27E /* FileCell.swift */; };
+		A556018927AD562B00B1F27E /* FileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A556018727AD562B00B1F27E /* FileCell.xib */; };
 		A561AC0F27A3E8C20072B250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561AC0E27A3E8C20072B250 /* AppDelegate.swift */; };
 		A561AC1127A3E8C20072B250 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561AC1027A3E8C20072B250 /* SceneDelegate.swift */; };
 		A561AC1327A3E8C20072B250 /* FileManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561AC1227A3E8C20072B250 /* FileManagerViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A556018627AD562B00B1F27E /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
+		A556018727AD562B00B1F27E /* FileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileCell.xib; sourceTree = "<group>"; };
 		A561AC0B27A3E8C20072B250 /* FileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A561AC0E27A3E8C20072B250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A561AC1027A3E8C20072B250 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A556018A27AD563B00B1F27E /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				A556018627AD562B00B1F27E /* FileCell.swift */,
+				A556018727AD562B00B1F27E /* FileCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		A561AC0227A3E8C20072B250 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +106,7 @@
 				A58B04BC27A6E20F009239A6 /* FolderViewController.swift */,
 				A56FCAE727AC5218006CDDCE /* SettingsViewController.swift */,
 				A561AC1427A3E8C20072B250 /* Main.storyboard */,
+				A556018A27AD563B00B1F27E /* CellView */,
 				A561AC1727A3E8C30072B250 /* Assets.xcassets */,
 				A561AC1927A3E8C30072B250 /* LaunchScreen.storyboard */,
 				A561AC1C27A3E8C30072B250 /* Info.plist */,
@@ -161,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A561AC1B27A3E8C30072B250 /* LaunchScreen.storyboard in Resources */,
+				A556018927AD562B00B1F27E /* FileCell.xib in Resources */,
 				A561AC1827A3E8C30072B250 /* Assets.xcassets in Resources */,
 				A561AC1627A3E8C20072B250 /* Main.storyboard in Resources */,
 			);
@@ -217,6 +232,7 @@
 			files = (
 				A58B04BD27A6E20F009239A6 /* FolderViewController.swift in Sources */,
 				A561AC1327A3E8C20072B250 /* FileManagerViewController.swift in Sources */,
+				A556018827AD562B00B1F27E /* FileCell.swift in Sources */,
 				A561AC0F27A3E8C20072B250 /* AppDelegate.swift in Sources */,
 				A572881327AA86D100F449FE /* LoginViewController.swift in Sources */,
 				A561AC1127A3E8C20072B250 /* SceneDelegate.swift in Sources */,

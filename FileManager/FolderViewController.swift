@@ -51,6 +51,7 @@ class FolderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        subfolderTableView.register(UINib(nibName: "FileCell", bundle: nil), forCellReuseIdentifier: "FileCell")
         subfolderTableView.delegate = self
         subfolderTableView.dataSource = self
         loadContent()
@@ -85,9 +86,13 @@ extension FolderViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "folderCell")
+        
+        let cell = subfolderTableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! FileCell
+       
         let itemName = subfolderContent[indexPath.row].path
-        cell.textLabel!.text = fileManager.displayName(atPath: itemName)
+        //cell.textLabel!.text = fileManager.displayName(atPath: itemName)
+        cell.label.text = fileManager.displayName(atPath: itemName)
+        cell.cellImage.image = UIImage(contentsOfFile: itemName)
         return cell
     }
 }
@@ -95,11 +100,11 @@ extension FolderViewController: UITableViewDataSource {
 extension FolderViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            
             let imageName = UUID().uuidString
             let path = createSubfolder().appendingPathComponent(imageName)
             if let jpegData = editedImage.jpegData(compressionQuality: 0.8) {
                 try? jpegData.write(to: path)
+                
             }
         }
         DispatchQueue.main.async {

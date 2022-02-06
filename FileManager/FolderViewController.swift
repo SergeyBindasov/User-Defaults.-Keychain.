@@ -10,12 +10,15 @@ import UIKit
 class FolderViewController: UIViewController {
     
     let fileManager = FileManager.default
+    let sizeBool = UserDefaults.standard.bool(forKey: "size")
+    let sortBool = UserDefaults.standard.bool(forKey: "sort")
     
     var subfolderContent: [URL] = []
     var newItem: URL?
     
     @IBOutlet weak var subfolderTableView: UITableView!
     
+    // MARK:  Class Methods
     @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         
         let picker = UIImagePickerController()
@@ -57,6 +60,8 @@ class FolderViewController: UIViewController {
         loadContent()
     }
 }
+    
+
 
 extension FolderViewController {
     func createSubfolder() -> URL {
@@ -72,7 +77,7 @@ extension FolderViewController {
     }
     
 }
-
+// MARK: TableView Methods
 extension FolderViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(subfolderContent[indexPath.row].path)
@@ -88,24 +93,35 @@ extension FolderViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = subfolderTableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! FileCell
-       
+        
         let itemName = subfolderContent[indexPath.row].path
-        //cell.textLabel!.text = fileManager.displayName(atPath: itemName)
+        
         cell.label.text = fileManager.displayName(atPath: itemName)
-        cell.cellImage.image = UIImage(contentsOfFile: itemName)
+        
+        cell.cellImage.image = UIImage(contentsOfFile: itemName) ?? UIImage(systemName: "questionmark.folder.fill")
+        if sizeBool == true {
+        cell.sizeLabel.text = ""
+        } else {
+            cell.sizeLabel.isHidden = true
+        }
         return cell
     }
 }
-
+// MARK: UIImagePicker Methods
 extension FolderViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            
             let imageName = UUID().uuidString
             let path = createSubfolder().appendingPathComponent(imageName)
             if let jpegData = editedImage.jpegData(compressionQuality: 0.8) {
                 try? jpegData.write(to: path)
-                
+              
+//                let jpegSize: Int = jpegData.count
+//                print("size of jpeg image in KB: %f ", Double(jpegSize) / 1024.0)
+//              
             }
+          
         }
         DispatchQueue.main.async {
             self.loadContent()

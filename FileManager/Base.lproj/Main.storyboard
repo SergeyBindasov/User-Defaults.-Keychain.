@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9Wn-ei-B58">
                                 <rect key="frame" x="20" y="316.5" width="374" height="209"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ic-e4-Xkm">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ic-e4-Xkm">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -28,7 +28,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Повторите пароль" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHA-an-KZe">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Повторите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHA-an-KZe">
                                         <rect key="frame" x="0.0" y="80" width="374" height="39"/>
                                         <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -89,7 +89,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5yg-R1-zpn">
                                 <rect key="frame" x="20" y="83" width="374" height="730"/>
-                                <color key="backgroundColor" red="0.83137254900000002" green="0.92549019610000005" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="gPb-zF-cuc">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
@@ -153,12 +154,53 @@
                                     <action selector="resetpressed:" destination="Q8T-xn-xYh" eventType="touchUpInside" id="LdD-01-eyQ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="hn4-EO-NNg">
+                                <rect key="frame" x="20.5" y="115" width="373.5" height="124"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="144" translatesAutoresizingMaskIntoConstraints="NO" id="rqB-Ta-Jb0">
+                                        <rect key="frame" x="0.0" y="0.0" width="373.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сортировка от А до Я" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skD-4w-nGk">
+                                                <rect key="frame" x="0.0" y="0.0" width="180.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-bW-wYJ">
+                                                <rect key="frame" x="324.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="sortSwitch:" destination="Q8T-xn-xYh" eventType="valueChanged" id="JwM-Hb-Tu5"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="217" translatesAutoresizingMaskIntoConstraints="NO" id="40P-PJ-Crs">
+                                        <rect key="frame" x="0.0" y="93" width="373.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Размер фото" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egv-ip-TWE">
+                                                <rect key="frame" x="0.0" y="0.0" width="107.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8IC-Oj-eZ1">
+                                                <rect key="frame" x="324.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="picSizeSwitch:" destination="Q8T-xn-xYh" eventType="valueChanged" id="rbt-PR-MjI"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BJR-N2-amH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Mwp-Ul-DKJ" secondAttribute="trailing" constant="24" id="1Jk-a6-wON"/>
+                            <constraint firstItem="hn4-EO-NNg" firstAttribute="top" secondItem="BJR-N2-amH" secondAttribute="top" constant="59" id="axJ-Cp-OCl"/>
                             <constraint firstAttribute="bottom" secondItem="Mwp-Ul-DKJ" secondAttribute="bottom" constant="130" id="gVS-1A-4t6"/>
+                            <constraint firstItem="hn4-EO-NNg" firstAttribute="centerX" secondItem="cAw-Qw-l42" secondAttribute="centerX" id="hvt-Aj-x7R"/>
                             <constraint firstItem="Mwp-Ul-DKJ" firstAttribute="leading" secondItem="cAw-Qw-l42" secondAttribute="leading" constant="24" id="ubV-IP-X8X"/>
                         </constraints>
                     </view>
@@ -312,7 +354,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ATC-ep-eKq"/>
         <segue reference="mtL-aY-s3n"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.04792752862" green="0.17990970610000001" blue="0.21177077289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

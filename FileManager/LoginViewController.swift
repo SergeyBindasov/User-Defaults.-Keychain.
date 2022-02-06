@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var confirmTF: UITextField!
     @IBOutlet weak var button: UIButton!
     
+    // MARK:  Different button conditions
     @IBAction func buttonPressed(_ sender: UIButton) {
         if sender.titleLabel?.text == "Создать пароль" {
             if checkPass(pass: passwordTF.text) == true {
@@ -54,7 +55,7 @@ class LoginViewController: UIViewController {
         if sender.titleLabel?.text == "Повторите пароль" {
             guard let userPassword = confirmTF.text else { return }
             if userPassword == keyChain["password"]! {
-                    performSegue(withIdentifier: "button", sender: self)
+                performSegue(withIdentifier: "button", sender: self)
             } else {
                 let alert = UIAlertController(title: "Ошибка", message: "Пароли не совпадают. Повоторите все заново.", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Ok", style: .cancel) { _ in
@@ -70,7 +71,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
+    
     
     @IBAction func loginAction(_ sender: UIButton) {
         if sender.titleLabel?.text == "Введите пароль" {
@@ -88,7 +89,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+    // MARK:  Class Methods
     func createPassword(password: String) {
         keyChain["password"] = password
         button.setTitle("Повторите пароль", for: .normal)
@@ -110,10 +111,10 @@ class LoginViewController: UIViewController {
     }
     
     func resetPassword() {
-      keyChain["password"] = nil
-      label = "Изменить пароль"
+        keyChain["password"] = nil
+        label = "Изменить пароль"
     }
-    
+    // MARK:  View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTF.isSecureTextEntry = true

@@ -35,17 +35,18 @@ class FileManagerViewController: UIViewController {
                 self.loadContent()
             }
         }
-            alert.addTextField { textField in
-                textField.placeholder = "Новая папка"
-                folder = textField
-            }
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
+        alert.addTextField { textField in
+            textField.placeholder = "Новая папка"
+            folder = textField
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        fileTableview.register(UINib(nibName: "FileCell", bundle: nil), forCellReuseIdentifier: "FileCell")
         fileTableview.delegate = self
         fileTableview.dataSource = self
         loadContent()
@@ -72,7 +73,7 @@ extension FileManagerViewController {
     }
 }
 
-// MARK:  TableView Methods
+// MARK: TableView Methods
 extension FileManagerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         folder = indexPath.row
@@ -86,11 +87,13 @@ extension FileManagerViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = fileTableview.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! FileCell
         cell.selectionStyle = .none
         let folderName = content[indexPath.row].path
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel!.text = fileManager.displayName(atPath: folderName)
+        cell.label.text = fileManager.displayName(atPath: folderName)
+        cell.cellImage.image = UIImage(systemName: "folder.badge.person.crop")
+        cell.sizeLabel.isHidden = true
         return cell
     }
 }

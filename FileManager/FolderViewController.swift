@@ -60,8 +60,6 @@ class FolderViewController: UIViewController {
         loadContent()
     }
 }
-    
-
 
 extension FolderViewController {
     func createSubfolder() -> URL {
@@ -73,9 +71,17 @@ extension FolderViewController {
     
     func loadContent() {
         subfolderContent = try! fileManager.contentsOfDirectory(at: createSubfolder(), includingPropertiesForKeys: nil, options: [])
+        
+        let sortedUrls = subfolderContent.sorted { a, b in
+            if sortBool == true {
+                return a.lastPathComponent.localizedStandardCompare(b.lastPathComponent) == ComparisonResult.orderedAscending
+            } else {
+                return a.lastPathComponent.localizedStandardCompare(b.lastPathComponent) == ComparisonResult.orderedDescending
+            }
+        }
+        subfolderContent = sortedUrls
         subfolderTableView.reloadData()
     }
-    
 }
 // MARK: TableView Methods
 extension FolderViewController: UITableViewDelegate {
@@ -119,7 +125,7 @@ extension FolderViewController: UIImagePickerControllerDelegate {
               
 //                let jpegSize: Int = jpegData.count
 //                print("size of jpeg image in KB: %f ", Double(jpegSize) / 1024.0)
-//              
+//
             }
           
         }

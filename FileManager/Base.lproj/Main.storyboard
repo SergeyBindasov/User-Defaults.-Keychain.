@@ -207,6 +207,8 @@
                     <navigationItem key="navigationItem" id="sid-tF-i0p"/>
                     <connections>
                         <outlet property="resetButton" destination="Mwp-Ul-DKJ" id="e7e-nN-fxb"/>
+                        <outlet property="sizeSwitch" destination="8IC-Oj-eZ1" id="OFJ-XK-sqS"/>
+                        <outlet property="sortSwitch" destination="aZK-bW-wYJ" id="KAQ-kf-uhM"/>
                         <segue destination="2ut-X5-RjU" kind="presentation" identifier="reset" id="mtL-aY-s3n"/>
                     </connections>
                 </viewController>
